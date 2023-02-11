@@ -1,19 +1,18 @@
-* {
-  box-sizing: border-box;
+body {
   margin: 0;
   padding: 0;
   font-family: "Times New Roman", serif;
   background-color: lightblue;
 }
 
-.heading {
-  background-color: rgb(40, 37, 38);
+.main {
+  background-color: rgb(228, 204, 212);
   color: blueviolet;
 
   margin: 50px;
 }
 
-p {
+span {
   padding-top: 20px;
   font-size: 20px;
   color: rgb(68, 122, 176);
@@ -42,7 +41,7 @@ img {
   width: 100%;
   height: 300px;
 }
-.para {
+.main-part {
   display: flex;
 
   flex-direction: row;
@@ -53,8 +52,8 @@ img {
   flex-wrap: wrap;
   gap: 30px;
 }
-.para1,
-.para2 {
+.small-section,
+.large-section {
   padding: 10px;
 }
 .content {
@@ -84,6 +83,6 @@ li {
 }
 @media only screen and (min-width: 600px) {
   .main nov {
-    disply: block;
+    display: block;
   }
 }
