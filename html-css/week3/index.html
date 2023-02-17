@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>payment</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Payment Form</h1>
+      <p>choose your payment method</p>
+    </header>
+    <form action method ="get" class="payment">
+    
+      <div class="order-summary">
+        
+          <h2>Order Summary</h2>
+          <div class="total">
+          
+            <p>Total</p>
+            
+            <p>§100/montrh</p>
+          </div>
+          <hr>
+
+            <div class="total">
+              <p>total</p>
+              
+              <p>§100</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <div class="payment-body">
+      <div class="payment-method">
+        <h2>Payment method</h2>
+        <div class="method">
+          <label for="method-1"class ="radio-label">
+            <input id="method-1"  name="method" type="radio" value="credit/debit" checked>
+            <div class="image-holder">
+              <img src="images/logo-cards.png" alt="mastr card">
+              <h4>Credit/Debit</h4>
+              </div>
+          </label>
+          <label for="method-2"class="radio-label">
+            <input type="radio"id="method-2" name="method"value="paypal">
+            <div class="image-holder">
+              <img src="images/pay pal.jpg"alt="paypal">
+              <h4>paypal</h4>
+
+            </div>
+
+          </label>
+
+
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="card-info">
+      <h2>Card Info</h2>
+      <div class="card-row">
+        <div>
+          <h3>Card Number</h3>
+          <div class="form-row-1">
+            <label for="card number"></label>
+            <input id="card-number" nmae="card-number" type= "text"
+            placeholder="1234 345 2356 1234">
+
+
+          </div>
+        </div>
+        <div>
+          <h3>Expiry date</h3>
+          <div class="form-row-2">
+          <label for="expiry-date"class="expiry-date"></label>
+          <input id="expiry-date" name="expiry-date" type="text"
+          placeholder="MM/YY">
+          </div>
+        </div>
+
+      
+      <div>
+        <h3>Security code</h3>
+        <div class="form-row-3">
+          <label for="security-code"class="security-code"></label>
+          <input id="security-code" name="security-code" type="text"
+          placeholder="CVV">
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+    <div >
+       <button>Buy Now</button>
+       
+    </div>
+  
+    <div>
+      <p class="needhelp">Needhelp?</p>
+      <br>
+    </div>
+    </form>
+  
+  </body>
+</html>
