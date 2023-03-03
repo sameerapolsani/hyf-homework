@@ -8,7 +8,7 @@ console.log(`You will be ${age} years old in ${yearFuture}`);
 
 
 
-//A dog age calculator
+//A dog age  calculator//
 let dogYearOfBirth = 2017;
 let dogYearFuture = 2030;
 let dogYear = dogYearFuture - dogYearOfBirth;
@@ -19,6 +19,7 @@ if (shouldShowResultInDogYears) {
 } else {
   console.log(`Your dog will be ${dogYear} human years old in ${dogYearFuture}`);
 }
+//end of dog age calculator
 
 
 
