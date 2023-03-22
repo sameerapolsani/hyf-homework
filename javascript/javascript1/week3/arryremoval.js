@@ -9,8 +9,8 @@ const names = [
     "katrine",
     "Tala"
   ];
-  const nameToRemove = names.indexOf("Ahmed");
-  const numberItemremove =1;
+  //const indexOfnameToRemove = names.indexOf("Ahmed");
+  //const numberofItemtoRemove =1;
   const newarrayRemove = names.splice(1,1);
  
     console.log (names);

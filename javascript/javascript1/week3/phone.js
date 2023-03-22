@@ -13,7 +13,7 @@ addActivities("23/7-18","youtube",30);
 addActivities("24/6-18","facebook",40);
 addActivities("25/6-18","instagram",20);
 function showStatus(activites){
-    if(activites.lenght === 0){
+    if(activites.lenght===0){
         console.log("add some activites before calling show status")
     }else{
         const limitUsage = 100;
