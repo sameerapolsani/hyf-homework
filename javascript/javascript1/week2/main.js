@@ -1,20 +1,24 @@
 //flight booking full name
 console.log("flight booking full name function")
-function getFullname(FirstName,surName,gender,useFormalName){
-    if(gender === "male" && useFormalName === true){
+function getFullname(FirstName,surName,gender,useFormalName)
+{
+    if(gender === "male" && useFormalName === true)
+    {
         console.log( `your custumer name lord ${FirstName} ${surName}`)
     }
-        else if(gender === "female" && useFormalName === true){
+        else if(gender === "female" && useFormalName === true)
+        {
             console.log (`your custumer name lordes ${FirstName} ${surName}` ) 
         }
-        else if(gender = "" && useFormalName ===false){
+        else if(gender = "" && useFormalName ===false)
+        {
             console.log(`your custemer name ${FirstName} ${surName}`)
         }
         else 
            console.log(`enter information`)
 
 
-    }
+    }    
     getFullname("sameera","polsani","female",true);
     getFullname("asan","shath","male",true);
     getFullname("suraj","varma","",true);
@@ -41,76 +45,89 @@ console.log("clothesToWear");
 //End of Weather wear
 
 // student manager
+console.log("Student manager!")
 
 const class07Students = [];
 function addStudentToClass(studentName) {
-    if(class07Students.length > 6 && studentName !== Qween)
-    console.log("Cannot add more students to class 07")
-    else if (class07Students.includes(studentName)){
-        console.log("Student ${studentName} is already in the class")
-    }
-    else if (studentName === "Qween"){
-        class07Students.push(studentName)
-        console.log(class07Students);}
-        else if(studentName === ""){
-            console.log("not add emty string")
+    if (class07Students.length < 6) {
+        if (studentName !== "") {
+            if (!class07Students.includes(studentName)) {
+                class07Students.push(studentName);
+            } else {
+                console.log(`Student ${studentName} is already in the class`);
+            }
+        } else {
+            console.log("You cannot add an empty string to a class");
         }
     }
-    addStudentToClass("");
-    addStudentToClass("Qween");
-    addStudentToClass("sameera");
-    addStudentToClass("sayali");
-    addStudentToClass("candi");
-    addStudentToClass("ati");
-    addStudentToClass("aha");
-    addStudentToClass("sameera");
-
-
-
-
-        
-        
-
-
-
-
-console.log(class07Students);
-
-function getNumberOfStudents() {
-  return class07Students.length;
-
+    else if ((!class07Students.includes("queen")) && (studentName === "queen")){
+        class07Students.push(studentName);
+    }
+    else {
+        console.log("Cannot add more students to class 07");
+    }
 }
 
-//candy helper optional
-const  boughtCandyPrices = [ ] ;
+addStudentToClass('Mari')
+addStudentToClass('vashitha')
+addStudentToClass('Luigi')
+addStudentToClass('sachi')
+addStudentToClass('Ani')
+addStudentToClass('Mario')
+addStudentToClass('')
+addStudentToClass('Candy')
+addStudentToClass('inja')
+addStudentToClass('queen')
 
-function addCandy(candyType,weight,price) {
- boughtCandyPrices.push(candyType,weight*price);
- addCandy("Sweet", 20 * 0.5);
-addCandy("Chocolate", 9 * 0.7);
-addCandy("Toffee", 19 * 1.1);
-addCandy("ChewingGum", 8 * 0.03);
-console.log(boughtCandyPrices);
+function getNumberOfStudents() {
+    return class07Students.length;
+}
+
+console.log(`Length of the class: ${getNumberOfStudents()}`);
+console.log(class07Students);
+
+//candy helper optional
+let boughtCandyPrices = [ ] ;
+
+function addCandy(candyType,weight) {
+    console.log(`${weight}  gm  of ${candyType}`)
+    if(candyType === "sweet"){
+        boughtCandyPrices.push(weight*0.5);
+    }
+    else if(candyType === "chokolate"){
+        boughtCandyPrices.push(weight * 0.7);
+    }
+    else if(candyType === "tofee"){
+        boughtCandyPrices.push(weight * 1.1)
+    }
+    else if(candyType === "chewing-gum"){
+        boughtCandyPrices.push(weight * 0.03)
+    }
+}
+
 
 let amountToSpend = Math.floor(Math.random() * 100);
-let totalprice = 0;
-
 function canBuyMoreCandy() {
+    let amountRemaining = 0;
 	for (let i = 0; i < boughtCandyPrices.length; i++) {
-		totalprice = totalprice + boughtCandyPrices[i];
+		amountRemaining = amountRemaining+ boughtCandyPrices[i];
 	}
 
-	if (totalprice > amountToSpend) {
+	if (amountRemaining > amountToSpend) {
 		console.log("You can buy more, so please do");
 	} else {
 		console.log("Enough candy for you");
 	}
 }
+console.log("your purchase");
+addCandy("tofee ",500);
+addCandy("sweet",500);
+canBuyMoreCandy();
 
 
 
 
-}
+
 
 
 //event day
