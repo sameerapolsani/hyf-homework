@@ -3,80 +3,78 @@ let nameOfperson;
 let toDo = [];
 function getReply(command) 
 {
-  let response;
-  let textMessage;
-  let task;
-  command.toLowerCase();
-  switch (command) {
-    case "Hello my name is sameera":
-      textMessage = command.split(" ");
-      nameOfperson = textMessage[textMessage.length - 1];
-      response = `nice to meet you ${nameOfperson}`;
+  let ouTput = null;
+  let meSsage = command.toLowerCase();
+  
+  
+  switch (command) 
+  {
+    case "hello my name is sameera":
+      meSsage = command.split(" ");
+      nameOfperson = meSsage[meSsage .length - 1];
+      ouTput = `nice to meet you ${nameOfperson}`;
       break;
 
-    case "What is my name?":
-      response = `your name is  ${nameOfperson}`;
+    case "what is my name?":
+      ouTput =`your name is ${nameOfperson}`;
       break;
-    case "Add fishing to my todo":
-      textMessage = command.split(" ");
-      task = textMessage[1];
-      toDo.push(task);
-      response = ` ${task} added to your todo`;
+    case "add fishing to my todo":
+      const firSttaSk = command.slice(4,11) ;
+      toDo.push(firSttaSk);
+      ouTput =`${firSttaSk} added to your todo`
       break;
-    case "add singing in the shower to my todo":
-      task = command.slice(4, 25);
-      toDo.push(task);
-      response = ` ${task} added to your todo`;
-      break;
-    case "what is on my todo":
-      response = `${toDo.toString()} is on your list`;
-      break;
-    case "What day is it today?":
-      const today = new Date();
-      const style = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-      response = today.toLocaleDateString('en-GB', style);
-      break;
-
-    case "what is 3 + 3":
-      textMessage= command.slice(8);
-      response = `answer is ${eval(textMessage)}`;
-      break;
-
-    case "set a timer for 4 minutes":
-      textMessage = command.split(" ");
-      let timer = textMessage[textMessage.length - 2];
-      response = `Timer set for ${timer} minutes`;
-      setTimeout(() => {
-        console.log("Timer completed");
-      }, timer * 1000);
-
-      break;
+    case "add singing in the shower to my todo ":
+        const seCondtAsk = command.slice(4,25);
+        toDo.push(seCondtAsk);
+        ouTput = `${seCondtAsk} added to your todo`;
+        break;
     case "remove fishing from my todo":
-      textMessage = command.split(" ");
-      task = textMessage[1];
-      if (toDo.includes(task)) {
-        toDo.splice(toDo.indexOf("fishing"), 1);
-        response = `${task} removed from todo`;
-      } else {
-        response = `${task} is not on your todo list`;
-      }
-      break;
-
-    default:
-      response = "Sorry, cannot help you.";
+          const removeWord = command.slice(7,14);
+          const  inDexofFishing = toDo.indexOf("fishing");
+          toDo.splice(inDexofFishing,1)
+          ouTput = `${removeWord} removed from your todo`;
+          break;
+    case "what is on my todo":
+            ouTput = `${toDo.toString()} is in your todo`;
+            break;
+    case "what day is it today?":
+              const toDay = new Date();
+              const formateOfdate =
+              {
+                year: "numeric",
+                month :"long",
+                day :"numeric"
+              }
+           ouTput = toDay.toLocaleDateString("en-GB",formateOfdate);
+           break;
+           case "what is 4 + 3":
+            const reSult =command.slice(8);
+            ouTput = `${reSult} is eaqual to ${eval(reSult)}`;
+            break;
+            case "set a timer for 2 minutes":
+              const tIme = command.slice(16,17);
+              const timeInmiNutes =tIme * 60000;
+              ouTput = `timer set to ${tIme} in minutes`;
+              setTimeout(function () 
+              {
+                console.log("Timer done");
+              }, timeInmiNutes);
+              break;
+              default:
+                ouTput = "sorry can not help you";
+            }
+             if(ouTput)
+             {
+              console.log(ouTput);
+             }
+   
   }
-
-  if (response) {
-    return response;
-  }
-}
-
-console.log(getReply("Hello my name is sameera"));
-console.log(getReply("What is my name?"));
-console.log(getReply("Add fishing to my todo"));
-console.log(getReply("add singing in the shower to my todo"));
-console.log(getReply("what is on my todo"));
-console.log(getReply("What day is it today?"));
-console.log(getReply("what is 3 + 3"));
-console.log(getReply("set a timer for 4 minutes"));
-console.log(getReply("remove fishing from my todo"));
+(getReply("hello my name is sameera"));
+(getReply("what is my name?"));
+(getReply("add fishing to my todo"));
+(getReply("add singing in the shower to my todo"));
+(getReply("what is on my todo"));
+(getReply("what day is it today?"));
+(getReply("what is 4 + 3"));
+(getReply("set a timer for 2 minutes"));
+(getReply("remove fishing from my todo"));
