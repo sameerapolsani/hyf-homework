@@ -34,7 +34,7 @@ const pTag = document.getElementById("spirit-animal-output");
 buttonTag.addEventListener("click", function () {
   const nameValue = inputTag.value;
   const spiritAnimal = getSpiritAnimal(animalAdjective, AnimalsName);
-  //console.log("nameValue");
+
   if (nameValue) {
     pTag.innerText = `${nameValue} the ${spiritAnimal}`;
     buttonTag.innerText = "create a new spirit animal";
