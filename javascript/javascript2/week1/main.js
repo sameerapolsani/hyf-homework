@@ -1,23 +1,29 @@
 console.log("Script loaded");
 
 const products = getAvailableProducts();
-const ulTag = document.createElement("ul");
-const bodyTag = document.createElement("body");
+console.log(products);
+
 function renderProducts(products) {
-  for (product of products) {
+  // creating tags
+  const main = document.querySelector("main");
+  const ulTag = document.createElement("ul");
+  main.appendChild(ulTag);
+  for (let i = 0; i < products.length; i++) {
     const liTag = document.createElement("li");
-    const title = document.createElement("h1");
-    const price = document.createElement("p");
-    const rating = document.createElement("p");
-    title.innerText = `${product.title}`;
-    price.innerText = `${product.price}`;
-    rating.innerText = `${product.rating}`;
-    liTag.appendChild(title);
-    liTag.appendChild(price);
-    liTag.appendChild(rating);
+    const nameTag = document.createElement("h3");
+    const priceTag = document.createElement("div");
+    const ratingTag = document.createElement("div");
+    // populate tag
+    nameTag.innerHTML = products[i].name;
+    priceTag.innerHTML = "price: " + products[i].price;
+    ratingTag.innerHTML = "rating: " + products[i].rating;
+    //append tags
+    liTag.appendChild(nameTag);
+    liTag.appendChild(priceTag);
+    liTag.appendChild(ratingTag);
     ulTag.appendChild(liTag);
   }
+  console.log(main);
 }
-bodyTag.appendChild(ulTag);
+
 renderProducts(products);
-console.log(products);
