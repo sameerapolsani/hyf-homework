@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS `meal` (
 	`title` VARCHAR(255) NOT NULL,
 	`description` TEXT NULL DEFAULT NULL,
 	`location` VARCHAR(255) NOT NULL,
-	`meal_date_time` DATETIME NOT NULL, -- Changed column name from when to meal_date_time
+	`when` DATETIME NOT NULL, 
 	`max_reservations` INT(2) NOT NULL,
 	`price` DECIMAL(5,2) NOT NULL,
 	`created_date` DATE NOT NULL,  
@@ -50,21 +50,21 @@ USE `meal_sharing`;
 select meal.id AS 'Meal Id', meal.title AS 'Meals'
 from meal;
 -- Add a new meal
-insert into meal (title, description, location, meal_date_time, max_reservations, price, created_date) 
+insert into meal (title, description, location, when, max_reservations, price, created_date) 
 values (' Indian Menu', 'veg salad paner', 'Mumbai', '2023-06-15 19:00:00', 8, 170.00, '2023-05-06');
 
-insert into meal (title, description, location, meal_date_time, max_reservations, price, created_date) 
+insert into meal (title, description, location, when, max_reservations, price, created_date) 
 values ('Non Vegeterian Indian Menu', 'Chicken biryani', 'Kochi', '2023-06-20 19:30:00', 10, 170.00, '2023-06-10');
-insert into meal (title, description, location, meal_date_time, max_reservations, price, created_date) 
+insert into meal (title, description, location, when, max_reservations, price, created_date) 
 values ('Daminose', 'Pizza', 'copenhagen', '2023-06-22 18:30:00', 9, 120.00, '2023-06-11');
-insert into meal (title, description, location, meal_date_time, max_reservations, price, created_date) 
+insert into meal (title, description, location, when, max_reservations, price, created_date) 
 values ('Danish Meal', 'pastamed salat', 'alborg', '2023-06-24 18:30:00', 20, 250.00, '2023-06-14');
-insert into meal (title, description, location, meal_date_time, max_reservations, price, created_date) 
+insert into meal (title, description, location, when, max_reservations, price, created_date) 
 values ('burger Meal', 'vegaan burger', 'odense', '2023-06-24 18:00:00', 9, 190.00, '2023-06-14');
 -- Deleted later using query
-insert into meal (title, description, location, meal_date_time, max_reservations, price, created_date) 
+insert into meal (title, description, location, when, max_reservations, price, created_date) 
 values ('kabab Meal', 'durum chiken', 'narrebro', '2023-06-20 18:00:00', 2, 90.00, '2023-06-16');
-insert into meal (title, description, location, meal_date_time, max_reservations, price, created_date) 
+insert into meal (title, description, location, when, max_reservations, price, created_date) 
 values ('italian meal','fdgfafha jggfgj', 'aarus', '2023-06-25 18:15:00', 15, 180.00, '2023-06-20');
 -- RESERVATION
 -- Get all reservations
