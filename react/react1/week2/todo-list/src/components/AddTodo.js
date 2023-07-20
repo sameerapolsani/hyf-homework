@@ -32,6 +32,7 @@ function AddToDo({ handleAddToDo }) {
           <h2>{message}</h2>
           <input
             type="text"
+            git
             placeholder="to do list"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
